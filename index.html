@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Veille_DBMS</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="entete">
+        <h1 class="titre">BD et SGBD</h1>
+    </div>
+    <div class="divider"></div>
+
+    <div class="sommaire">
+        <h1>Sommaire</h1>
+        <ul>
+            <li>Introduction</li><br>
+             <li> 
+                <a class="lien-sommaire" href="#concepts"> Concepts de base</a>
+            </li>
+            <br>
+             <li>
+                <a class="lien-sommaire" href="#composants">Composants des systèmes de gestion de bases de données</a>
+            </li>
+            <br>
+             <li>
+                <a class="lien-sommaire" href="#un-peu-histoire">Un peu d'histoire</a>
+            </li>
+            <br>
+             <li>
+                <a class="lien-sommaire" href="#Le-modèle-relationnel">Le modèle relationnel</a>   
+            </li>
+            <br>
+             <li> 
+                <a class="lien-sommaire" href="#Définitions">Définitions</a>
+            </li>
+             <br>
+             <li> 
+                <a class="lien-sommaire" href="#Opérateurs-relationnels">Opérateurs relationnels</a>
+            </li>
+             <br>
+             <li>
+                <a class="lien-sommaire" href="#Langages">Langages de manipulation de données relationnelles</a>
+            </li>
+            <br>
+             <li> 
+                <a class="lien-sommaire" href="#Interrogation"> Interrogation</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="page-content">
+        <h2>Introduction</h2>
+        <p>Les bases de données sont actuellement au cœur du système d'information des entreprises. Les systèmes de gestion de bases de données, initialement disponibles uniquement sur des "mainframes", peuvent maintenant être installés sur tous les types
+            d'ordinateurs y compris les ordinateurs personnels. Mais attention, souvent on désigne, par abus de langage, sous le nom "bases de données" des ensembles de données qui n'en sont pas.</p>
+        <p>Qu'est-ce donc qu'une base de données?</p>
+        <p>Que peut-on attendre d'un système de gestion de bases de données?</p>
+
+        <p>C'est à ces questions, entre autres, que cet ouvrage essaie d'apporter des réponses. Dans un premier temps, et de façon informelle, on peut considérer une Base de Données (BD) comme une grande quantité de données, centralisées ou non, servant
+            pour les besoins d'une ou plusieurs applications, interrogeables et modifiables par un groupe d'utilisateurs travaillant en parallèle. Quant au Système de Gestion de Bases de Données (SGBD), il peut être vu comme le logiciel qui prend en charge
+            la structuration, le stockage, la mise à jour et la maintenance des données ; c'est, en fait, l'interface entre la base de données et les utilisateurs ou leurs programmes</p>
+        <ul>
+            <li>Les limites à l'utilisation des fichiers</li>
+            <li> Objectifs des systèmes de gestion de bases de données</li>
+            <li>Concepts de base</li>
+            <li>Composants des systèmes de gestion de bases de données </li>
+
+        </ul>
+<hr>
+        <h2 id="concepts">Concepts de base</h2>
+
+        <p>Pour assurer ces objectifs (surtout les deux premiers), trois niveaux de description des données ont été définis par la norme ANSI/SPARC.
+
+<p>Niveau interne</p>
+
+Description du stockage des données au niveau des unités de stockage, des fichiers, On appelle cette description le schéma interne.
+
+<p>Niveau conceptuel</p>
+
+Description de la structure de toutes les données qui existent dans la base, description de leurs propriétés (relations qui existent entre elles) c'est-à-dire de leur sémantique inhérente, sans soucis d'implémentation physique ni de la façon dont chaque groupe de travail voudra s'en servir. On appelle cette description le schéma conceptuel.
+
+<p>Niveau externe</p>
+
+Description pour chaque utilisateur de sa perception des données. On appelle cette description le schéma externe ou vue.
+
+Le résultat de la conception d'une base de données sera une description des données. Par description on entend définir les propriétés d'ensembles d'objets modélisés dans la base de données et non pas d'objets particuliers. Les objets particuliers sont définis par les programmes d'applications lors des insertions et des mises à jour des données. Ils doivent alors vérifier les propriétés des ensembles auxquels ils appartiennent.
+
+Cette description des données sera effectuée en utilisant un modèle de données. Ce dernier est un outil intellectuel utilisé pour comprendre l'organisation logique des données. C'est un ensemble de concepts et de règles pour les utiliser, permettant de construire avec des types de données une représentation de la réalité. Un système de gestion de bases de données est caractérisé par le modèle de description des données qu'il supporte. Les données sont décrites sous la forme de ce modèle, grâce à un langage de description des données.
+
+Cette description est appelée schéma. Les modèles utilisés sont : réseau, relationnel, objet,
+Une fois la base de données spécifiée, on peut y insérer des données, les récupérer, les modifier et les détruire. C'est ce qu'on appelle manipuler les données. Les données peuvent être manipulées non seulement par un langage spécifique de manipulation des données mais aussi par des langages de programmation "classiques".
+
+<hr>
+<h2  id ="composants">Composants des systèmes de gestion de bases de données</h2>
+
+Un système de gestion de bases de données va donc posséder un certain nombre de composants logiciels et ce, quel que soit le modèle de données qu'il supporte. On trouve donc des composants chargés de :
+
+<p>La description des données</p>
+
+Cette partie sera constituée des outils (en gros des langages) permettant de décrire la vision des données de chaque utilisateur et l'intégration dans une vision globale. On y trouve aussi les outils permettant de décrire le stockage physique des données.
+
+<p>La récupération des données</p>
+
+Cette partie prend en charge l'interrogation et la modification des données et ce, de façon optimisée. Elle est composée de langages de manipulation de données spécifiques et d'extensions de langages "classiques". Elle gère aussi les problèmes de sécurité.
+
+<p>La sauvegarde et la récupération après pannes</p>
+
+Cette partie comporte des outils permettant de sauvegarder et de restaurer de façon explicite une base de données. Elle comporte aussi des mécanismes permettant, tant qu'une modification n'est pas finie, de pouvoir revenir à l'état de la base avant le début de cette modification.
+
+<p>Les accès concurrents aux données</p>
+
+C'est la partie chargée du contrôle de la concurrence des accès aux données. Elle doit être telle que chaque utilisateur attende le moins possible ses données tout en étant certain d'obtenir des données cohérentes en cas de mises à jour simultanées de la base.
+
+Chacun de ces composants est décrit de façon plus détaillée par la suite.
+<hr>
+<h2  id="un-peu-histoire">Un peu d'histoire</h2>
+
+<p>1960</p>
+
+Uniquement des systèmes de gestion de fichiers plus ou moins sophistiqués.
+
+<p>1970</p>
+
+Début des systèmes de gestion de bases de données réseaux et hiérarchiques proches des systèmes de gestion de fichiers. Ces systèmes de gestion de bases de données avaient rempli certains des objectifs précédents mais on ne pouvait pas interroger une base sans savoir où était l'information recherchée (on "naviguait") et sans écrire de programmes.
+Sortie du papier de CODD sur la théorie des relations, fondement de la théorie des bases de données relationnelles.
+
+<p>1980</p>
+
+Les systèmes de gestion de bases de données relationnels apparaissent sur le marché. 1990
+
+Les systèmes de gestion de bases de données relationnels dominent le marché.
+
+Début des systèmes de gestion de bases de données orientés objet.
+
+<hr>
+<h2 id="Le-modèle-relationnel">Le modèle relationnel</h2>
+
+Le modèle relationnel a été formalisé par CODD en 1970. Quelques exemples de réalisation en sont :
+
+DB2(IBM), INFORMIX, INGRES, ORACLE.
+
+Dans ce modèle, les données sont stockées dans des tables, sans préjuger de la façon dont les informations sont stockées dans la machine. Un ensemble de données sera donc modélisé par un ensemble de tables.
+
+Le succès du modèle relationnel auprès des chercheurs, concepteurs et utilisateurs est dû à la puissance et à la simplicité de ses concepts. En outre, contrairement à certains autres modèles, il repose sur des bases théoriques solides, notamment la théorie des ensembles et la logique mathématique( théorie des prédicats d'ordre 1).
+
+Les objectifs du modèle relationnel :
+<ul>
+
+   <li> proposer des schémas de données faciles à utiliser,</li>
+
+   <li>  améliorer l'indépendance logique et physique,</li>
+
+  <li>mettre à la disposition des utilisateurs des langages de haut niveau pouvant éventuellement être utilisés par des non informaticiens, </li>
+
+  <li>optimiser les accès à la base de données, </li>
+
+ <li>améliorer l'intégrité et la confidentialité,</li>
+
+ <li>fournir une approche méthodologique dans la construction des schémas. </li>
+
+De façon informelle, on peut définir le modèle relationnel de la manière suivante :
+
+ <li> Les données sont organisées sous forme de tables à deux dimensions, encore appelées relations et chaque ligne n-uplet ou tuple, </li>
+
+  <li>les données sont manipulées par des opérateurs de l'algèbre relationnelle,</li> 
+
+  <li> l'état cohérent de la base est défini par un ensemble de contraintes d'intégrité.</li>
+
+Au modèle relationnel est associée la théorie de la normalisation des relations qui permet de se débarrasser des incohérences au moment de la conception d'une base de données.
+</ul>
+
+<ul>
+     <li>Définitions</li>
+
+     <li>Opérateurs relationnels</li>
+
+     <li>Formes normales</li>
+
+     <li>Dépendance fonctionnelle</li>
+
+     <li>Notion de clé</li>
+
+     <li>Formes normales</li>
+
+     <li> Langages de manipulation de données relationnelles</li>
+
+     <li> Remarques</li>
+</ul>
+<hr>
+<h2 id="Définitions">Définitions</h2>
+
+
+<p><strong>Définition (Domaine)</strong> :   Ensemble de valeurs.</p>
+
+<p><strong>Définition (Relation) </strong>:   Sous-ensemble du produit cartésien d'une liste de domaines caractérisé par un nom. En d'autres termes, une relation n'est ni plus ni moins qu'une table dans laquelle chaque colonne correspond à un domaine et porte un nom ce qui rend leur ordre sans aucune importance.</p>
+
+<p> <strong>Définition (Attribut) </strong>:   Colonne d'une relation caractérisée par un nom.</p>
+
+<p> <strong>Définition (Schéma de relation)</strong> :   Nom de la relation, suivi de la liste des attributs avec leurs domaines. Définition (Base de données relationnelles)</strong> :   Base de données dont le schéma est un ensemble de schémas de relations et dont les occurrences sont les tuples de ces relations.</p>
+<p>
+<strong>Définition (Système de gestion de bases de données relationnel)</strong> :   C'est un logiciel supportant le modèle relationnel, et qui peut manipuler les données avec des opérateurs relationnels.
+</p>
+
+<hr>
+<h2 id="Opérateurs-relationnels">Opérateurs relationnels</h2>
+
+<p> <strong>Définition (Projection)</strong> :   Opération qui consiste à supprimer des attributs d'une relation et à éliminer les tuples en double apparaissant dans la nouvelle relation. Cette opération est notée &Pi;.</p>
+
+<p> <strong>Définition (Restriction)</strong> :   Opération qui consiste à supprimer les tuples d'une relation ne satisfaisant pas la condition précisée.</p>
+
+<p> <strong>Définition (Jointure) </strong>:   Opération qui consiste à faire le produit cartésien de deux relations, puis à supprimer les tuples ne satisfaisant pas une condition portant sur un attribut de la première relation et sur un attribut de la seconde.</p>
+
+<p> <strong>Définition (Union) </strong>:   Opération portant sur deux relations ayant le même schéma et construisant une troisième relation constituée des tuples appartenant à chaque relation. Les tuples en double sont éliminés. Définition (Différence relationnelle) :   Opération portant sur deux relations ayant le même schéma et construisant une troisième relation dont les tuples sont constitués de ceux ne se trouvant que dans une seule relation.</p>
+
+<p> <strong>Définition (Intersection) </strong>:   Opération portant sur deux relations ayant le même schéma et construisant une troisième relation dont les tuples sont constitués de ceux appartenant aux deux relations.</p>
+
+<hr>
+<h2 id="Langages">Langages de manipulation de données relationnelles</h2>
+
+Ces langages, dits assertionnels, sont basés sur la logique des prédicats d'ordre 1 et permettent de spécifier les données que l'on souhaite obtenir, sans dire comment y accéder. On doit y trouver des opérations permettant de :
+
+<p>[la modification] la recherche retrouver des tuples vérifiant certains critères, l'insertion ajouter des tuples, la suppression enlever des tuples vérifiant certains critères, la modification modifier des tuples vérifiant certains critères.</p>
+
+Un langage de manipulation de données n'est pas utilisable à lui seul, il doit aussi pouvoir être incorporable dans un langage de programmation classique.
+
+On peut distinguer trois grandes classes de langages :
+<ul>
+ <p> <li>Les langages algébriques basés sur l'algèbre relationnelle de CODD dans lesquels les requêtes sont exprimées comme l'application des opérateurs relationnels sur des relations. C'est dans cette catégorie que l'on trouve le langage sql(structured query language), standard pour l'interrogation de bases de données.</li> </p>
+
+<p><li>Les langages basés sur le calcul relationnel de tuples construits à partir de la logique des prédicats dans lesquels les variables manipulées sont des tuples.
+</li> </p>
+
+<p><li>Les langages basés sur le calcul relationnel de domaines, construit aussi à partir de la logique des prédicats mais en faisant varier les variables sur les domaines des relations.</li> </p>
+
+Le langage sql (Structured Query Language) comprend à lui seul l'ensemble des instructions nécessaires à la spécification et à l'utilisation d'une base de données relationnelle. C'est un langage de type déclaratif c'est-à-dire que l'on spécifie les propriétés des données que l'on recherche et pas, comme dans un langage impératif, comment les retrouver.
+
+<p>Le langage sql est un langage normalisé, la dernière version de la norme date de 92 et, souvent, on y fait référence en parlant de sql-92. La prochaine version de la norme est en cours de rédaction afin d'intégrer, entre autres, la notion de types abstraits algébriques, on la désigne sous le nom de sql3. C'est à la fois :</p>
+
+<p> <li>un langage d'interrogation de données (LID) : SELECT ; </li> </p>
+
+<p> <li> un langage de manipulation de données (LMD) : UPDATE, INSERT, DELETE ;</li> </p>
+
+<p> <li>un langage de définition des données (LDD) : ALTER, CREATE, DROP;</li> </p>
+
+<p> <li>un langage de contrôle des données et des utilisateurs (LCD) : GRANT, REVOKE.</li> </p>
+
+</ul>
+
+<hr>
+<h2 id="Interrogation">Interrogation</h2>
+
+<p> <strong>Cohérence d'une interrogation </strong> </p>
+
+<p>Un utilisateur qui interroge une table (même très grande) est garanti de voir toutes les données telles qu'elles étaient au moment du début de l'interrogation, même si d'autres utilisateurs modifient la table et valident leurs modifications pendant ce temps.</p>
+
+<p>Les sgbd dont oracle utilisent alors le fichier image avant pour assurer cette cohérence. Le COMMIT des utilisateurs modifiant la table n'est pas différé à la fin de l'interrogation.</p>
+
+<p><strong>Remarque :</strong> Dès que l'on interroge une table, un verrou est placé sur la définition de la table, c'est à dire qu'un autre utilisateur ne peut pas détruire la table, l'indexer, la mettre en cluster ou modifier sa définition, jusqu'à ce que l'interrogation soit terminée.</p>
+
+<p> <strong>Cohérence de plusieurs interrogations successives </strong> </p>
+Si l'utilisateur désire que l'on ne modifie pas une table pendant une session de travail, celui-ci peut verrouiller la table en mode partagé au moyen de l'ordre sql suivant :
+
+<p>LOCK TABLE  nom_table IN SHARE MODE NOWAIT;</p>
+
+où l'option NOWAIT, qui peut s'adjoindre à toutes les commandes de verrouillage, spécifie que le process qui demande le verrou n'est pas mis en attente si celui-ci n'est pas disponible.
+
+La table n'est alors accessible aux autres utilisateurs qu'en lecture jusqu'à la fin de la transaction de celui qui l'a verrouillée (les autres utilisateurs peuvent aussi verrouiller la table en share mode). Les modifications des autres utilisateurs seront suspendues.
+
+</p>
+
+    </div>
+
+</body>
+
+</html>

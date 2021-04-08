@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+
+.page-content {
+    width: 900px;
+    margin: auto;
+    text-align: justify;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.titre {
+    text-align: center;
+    margin: 0;
+    padding: 0
+}
+
+.entete {
+    background: #fc0!important;
+    color: #0f4787;
+    top: 0;
+}
+
+.divider {
+    background: #0f4787;
+    height: 5px;
+}
+
+.sommaire {
+    display: inline-block;
+    width: 300px;
+    background-color: #0f4787;
+    float: left;
+    color: #fff;
+    padding: 10px;
+}
+
+.titre-sommaire {
+    margin: 10px;
+}
+.lien-sommaire{
+    text-decoration: none;
+    color: #fff;
+}
